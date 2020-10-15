@@ -1,0 +1,14 @@
+
+cradle: 
+  cabal:
+    - component: "exe:ghosts" 
+      path: "./app/"
+    - component: "lib:ghosts"
+      path: "./src/"
+    - component: "test:ghosts-tests"
+      path: "./test"
+  direct:
+    arguments:
+      - -no-user-package-db
+      - -Wall
+      - -fdefer-typed-holes
