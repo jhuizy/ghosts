@@ -15,7 +15,8 @@ library
   default-language:    Haskell2010
   exposed-modules:     Ghosts
   ghc-options:         -Wall -fno-warn-name-shadowing
-  build-depends:       base >= 4.11 && < 5
+  build-depends:       base
+                     , scotty
 
 executable ghosts
   main-is:            Main.hs
@@ -31,6 +32,6 @@ test-suite ghosts-tests
   main-is:          Main.hs
   default-language: Haskell2010
   ghc-options:      -Wall -threaded
-  build-depends:    base >=4.11 && < 5
+  build-depends:    base
                   , ghosts
                   , hedgehog
