@@ -1,9 +1,9 @@
 module User
-  ( User(..)  
+  ( User (..),
   )
-  where
+where
 
 data User = User
-  { userName :: String
-  , userPassword :: String
+  { userName :: String,
+    userPassword :: String
   }

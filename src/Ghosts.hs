@@ -2,12 +2,12 @@
 
 module Ghosts where
 
-import User
 import Database.User
-import Web.Scotty
-import Proofs.Authenticated
 import Named
 import Proofs.Admin (admin)
+import Proofs.Authenticated
+import User
+import Web.Scotty
 
 updatePassword' :: MonadFail m => String -> String -> String -> m ()
 updatePassword' username password newPassword = do
@@ -15,7 +15,7 @@ updatePassword' username password newPassword = do
   withName user $ \namedUser -> do
     Just authed <- authenticate namedUser password
     Just admind <- admin namedUser authed
-    updatePassword namedUser admind newPassword 
+    updatePassword namedUser admind newPassword
 
 main :: IO ()
 main = scotty 3000 $ do

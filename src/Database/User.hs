@@ -1,8 +1,8 @@
 module Database.User (updatePassword, findUserByName) where
 
-import User
 import Named
 import Proofs.Admin
+import User
 
 findUserByName :: Monad m => String -> m (Maybe User)
 findUserByName s = pure . Just $ User s "password"
